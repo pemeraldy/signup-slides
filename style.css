@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+img {
+  width: 100%;
+}
+section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #fee648;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+section .container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.container .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.user .imgBx {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background-color: #ff0;
+  transition: all 0.5s;
+}
+.imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  transition: all 0.5s;
+}
+
+form h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+form input {
+  width: 100%;
+  background-color: #f5f5f5;
+  font-size: 13px;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 8px 0;
+  padding: 10px;
+}
+form input[type="submit"] {
+  background-color: #677eff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+form .signup {
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.signup a {
+  text-decoration: none;
+}
+
+.container .signupBx {
+  pointer-events: none;
+}
+.container .signupBx .formBx {
+  left: 100%;
+}
+.container .signupBx .imgBx {
+  left: -100%;
+}
+/* When container is active SIGNUP BOX */
+.container.active .signupBx .formBx {
+  left: 0;
+}
+.container.active .signupBx .imgBx {
+  left: 0;
+}
+.container.active .signupBx {
+  pointer-events: initial;
+}
+
+/* FORM SIGNIN STATES */
+.container .signinBx .formBx {
+  left: 0;
+}
+.container.active .signinBx .formBx {
+  left: 100%;
+}
+.container .signinBx .imgBx {
+  left: 0;
+}
+.container.active .signinBx .imgBx {
+  left: -100%;
+}
+
+/* RESPONSIVENESS */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 90%;
+  }
+  .container .imgBx {
+    display: none;
+  }
+  .container .formBx {
+    width: 100%;
+  }
+  form .signup {
+    font-size: 10px;
+  }
+}
